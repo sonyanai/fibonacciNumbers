@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText"
+            android:digits="0123456789exitqu"
             android:hint="Nを入力してください"/>
         <Button
             android:layout_width="wrap_content"

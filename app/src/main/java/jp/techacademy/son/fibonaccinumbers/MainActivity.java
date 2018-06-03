@@ -11,8 +11,15 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     Button button;
-    TextView textView1;
-    TextView textView2;
+    int t;
+    int a1;
+    int a2;
+    String n;
+    int fibonacciNumber;
+    int fibonacciNumbers;
+    String fn;
+    String fns;
+    Fibonacci fibonacci;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +29,56 @@ public class MainActivity extends AppCompatActivity {
 
 
         editText = (EditText)findViewById(R.id.editText);
-        textView1 = (TextView)findViewById(R.id.textView1);
-        textView2 = (TextView)findViewById(R.id.textView2);
+//        textView1 = (TextView)findViewById(R.id.textView1);
+//        textView2 = (TextView)findViewById(R.id.textView2);
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String t = editText.getText().toString();
+                n = editText.getText().toString();
 
-                Fibonacci fibonacci = new Fibonacci(t);
-                fibonacci.show();
+                try{
+                    t = Integer.parseInt(n);
+                }catch (NumberFormatException e){
+                    if (n.equals("exit") || n.equals("quit")){
+                        button.setEnabled(false);
+                        editText.setText("入力不可");
+                        //ボタンを背無いようにする
+                    }
+                    return ;
+                }
+
+
+
+                a1 =0;
+                a2 =1;
+                if (0<t && t<=70){
+                    if (t==1){
+                        fn="0";
+                        fns="0";
+                        fibonacci = new Fibonacci(n,fn,fns);
+                        fibonacci.show();
+                    }else if(t==2){
+                        fn="1";
+                        fns="0 1";
+                        fibonacci = new Fibonacci(n,fn,fns);
+                        fibonacci.show();
+                    }else{
+                        fns = "0 1 ";
+                        for (int s=3;s<=t;s++){
+                            fibonacciNumber = a1+a2;
+                            fn =String.valueOf(fibonacciNumber);
+                            fns =fns + fn+" ";
+
+                            a1=a2;
+                            a2=fibonacciNumber;
+
+                        }
+                        fibonacci = new Fibonacci(n,fn,fns);
+                        fibonacci.show();
+
+                    }
+                }
             }
         });
 
