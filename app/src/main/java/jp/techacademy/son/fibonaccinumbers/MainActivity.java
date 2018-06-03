@@ -11,11 +11,11 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     Button button;
-    int t;
-    int a1;
-    int a2;
+    long t;
+    long a1;
+    long a2;
     String n;
-    int fibonacciNumber;
+    long fibonacciNumber;
     String fn;
     String fns;
     Fibonacci fibonacci;
@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText)findViewById(R.id.editText);
         button = (Button)findViewById(R.id.button);
 
-        int ti=1000000000+1100000000;
-        String rt = String.valueOf(ti);
-        Log.d("bbb",rt);
+//        long ti=1000000000+1500000000;
+//        String rt = String.valueOf(ti);
+//        Log.d("bbb",rt);
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
