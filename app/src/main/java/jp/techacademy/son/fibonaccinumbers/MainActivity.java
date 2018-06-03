@@ -77,11 +77,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                         fibonacci = new Fibonacci(n,fn,fns);
                         fibonacci.show();
-
                     }
                 }
             }
         });
-
     }
 }
