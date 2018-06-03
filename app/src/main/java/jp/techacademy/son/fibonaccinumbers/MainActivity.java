@@ -2,6 +2,7 @@ package jp.techacademy.son.fibonaccinumbers;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,12 +29,18 @@ public class MainActivity extends AppCompatActivity {
 
         editText = (EditText)findViewById(R.id.editText);
         button = (Button)findViewById(R.id.button);
+
+        int ti=1000000000+1100000000;
+        String rt = String.valueOf(ti);
+        Log.d("bbb",rt);
+
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 n = editText.getText().toString();
 
                 //exitで終了するようにfor文を使う？
+
 
 
 
