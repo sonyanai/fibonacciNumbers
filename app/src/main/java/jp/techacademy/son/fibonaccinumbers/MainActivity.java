@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     int a2;
     String n;
     int fibonacciNumber;
-    int fibonacciNumbers;
     String fn;
     String fns;
     Fibonacci fibonacci;
@@ -29,14 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         editText = (EditText)findViewById(R.id.editText);
-//        textView1 = (TextView)findViewById(R.id.textView1);
-//        textView2 = (TextView)findViewById(R.id.textView2);
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 n = editText.getText().toString();
 
+                //exitで終了するようにfor文を使う？
+
+
+
+                //文字か数字かの確認
                 try{
                     t = Integer.parseInt(n);
                 }catch (NumberFormatException e){
